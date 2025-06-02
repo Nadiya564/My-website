@@ -13,7 +13,7 @@ d<!DOCTYPE html>
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      color: #fff;
+      color: white;
     }
 
     .container {
@@ -23,7 +23,7 @@ d<!DOCTYPE html>
       align-items: center;
       padding: 2rem;
       min-height: 100vh;
-      color: white;
+      background-color: rgba(0, 0, 0, 0.4); /* soft overlay */
     }
 
     .text-left, .text-right {
@@ -31,16 +31,70 @@ d<!DOCTYPE html>
       padding: 1rem;
     }
 
+    .text-left {
+      color: #cfe3f1;
+      font-weight: 300;
+      font-size: 1.1rem;
+    }
+
+    .text-right {
+      color: #f3e564;
+      font-weight: 300;
+      font-size: 1rem;
+    }
+
+    .text-right h2 {
+      color: #ffffff;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .highlight {
+      color: #fbbc05;
+      font-weight: 700;
+    }
+
     .logo {
       max-width: 200px;
+      margin-bottom: 1rem;
+    }
+
+    .donate-button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #fbbc05;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .donate-button:hover {
+      background-color: #e0a800;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="text-left">
-      <img src="IMG_0091.jpeg" alt="Logo" class="logo" />
+      <img src="IMG_0091.jpeg" alt="Charity: Water Logo" class="logo" />
+      <p>
+        Charity: Water lets student activists who advocate for environmental and water policies directly fund clean water projects, with 100% transparency—so you know exactly where your impact goes. Charity: Water uniquely combines innovation, accountability, and emotional connection to mobilize the next generation of change makers.
+      </p>
     </div>
     <div class="text-right">
-      <h1>Help Bring Clean Water</h1>
-      <p>Support our mission to bring safe drinking water to communities in
+      <h2>Clean Water is a Human Right—<br />Help Make It Reality</h2>
+      <p>
+        Every day without safe water is a risk to life. Take action with Charity: Water and fight for a future where every person has access to clean water.
+        <span class="highlight">Real impact. Full transparency.</span> Powered by change makers like you.
+      </p>
+      <a href="#" class="donate-button">Donate Now</a>
+    </div>
+  </div>
+</body>
+</html>
