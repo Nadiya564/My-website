@@ -79,6 +79,44 @@
     .donate-button:hover {
       background-color: #e0a800;
     }
+      /* Hamburger icon */
+.hamburger {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1000;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+/* Contact info dropdown */
+.contact-info {
+  display: none;
+  position: absolute;
+  top: 3.5rem;
+  right: 1rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 1rem;
+  border-radius: 8px;
+  z-index: 999;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.contact-info.show {
+  display: block;
+}
+
+    }
   </style>
 </head>
 <body>
@@ -98,5 +136,12 @@
       <a href="#" class="donate-button">Donate Now</a>
     </div>
   </div>
+
+  <script>
+  function toggleContact() {
+    document.getElementById('contact').classList.toggle('show');
+  }
+</script>
+
 </body>
 </html>
