@@ -3,16 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Charity: Water Landing Page</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <title>Charity: Water</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-image: url('IMG_0095.jpeg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
+      font-family: Arial, sans-serif;
+      background: url('IMG_0095.jpeg') no-repeat center center/cover;
       color: white;
     }
 
@@ -23,7 +19,6 @@
       align-items: center;
       padding: 2rem;
       min-height: 100vh;
-      background-color: rgba(0, 0, 0, 0.4); /* soft overlay */
     }
 
     .text-left, .text-right {
@@ -32,58 +27,97 @@
     }
 
     .text-left {
-      color: #cfe3f1;
-      font-weight: 300;
-      font-size: 1.1rem;
+      max-width: 400px;
     }
 
     .text-right {
-      color: #f3e564;
-      font-weight: 300;
-      font-size: 1rem;
-    }
-
-    .text-right h2 {
-      color: #ffffff;
-      font-weight: 700;
-      margin-top: 0;
-    }
-
-    .highlight {
-      color: #fbbc05;
-      font-weight: 700;
+      max-width: 500px;
     }
 
     .logo {
-      max-width: 200px;
+      max-width: 100%;
       height: auto;
-      display: block;
-      margin-bottom: 1rem;
-      
+    }
 
+    h2 {
+      color: #fff;
+    }
+
+    .highlight {
+      color: #ffcc00;
+      font-weight: bold;
     }
 
     .donate-button {
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background-color: #fbbc05;
-      color: #000;
+      background-color: #ffcc00;
+      color: black;
+      padding: 0.8rem 1.5rem;
       border: none;
       border-radius: 5px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
       text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
       display: inline-block;
+      transition: background-color 0.3s ease;
     }
 
     .donate-button:hover {
       background-color: #e0a800;
     }
+
+    /* Hamburger icon */
+    .hamburger {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      z-index: 1000;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      transition: 0.3s;
+    }
+
+    /* Contact info dropdown */
+    .contact-info {
+      display: none;
+      position: absolute;
+      top: 3.5rem;
+      right: 1rem;
+      background-color: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      z-index: 999;
+    }
+
+    .contact-info.show {
+      display: block;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleContact()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Contact Info -->
+  <div id="contact" class="contact-info">
+    <p><strong>Contact Us</strong></p>
+    <p>Email: info@charitywater.org</p>
+    <p>Phone: (123) 456-7890</p>
+  </div>
+
   <div class="container">
     <div class="text-left">
       <img src="IMG_0091.jpeg" alt="Charity: Water Logo" class="logo" />
@@ -95,10 +129,18 @@
       <h2>Clean Water is a Human Right—<br />Help Make It Reality</h2>
       <p>
         Every day without safe water is a risk to life. Take action with Charity: Water and fight for a future where every person has access to clean water.
-        <span class="highlight">Real impact. Full transparency.</span> Powered by change makers like you.
+        <span class="highlight">Real impact. Full transparency.</span>
+        Powered by change makers like you.
       </p>
       <a href="#" class="donate-button">Donate Now</a>
     </div>
   </div>
+
+  <script>
+    function toggleContact() {
+      document.getElementById('contact').classList.toggle('show');
+    }
+  </script>
+
 </body>
 </html>
